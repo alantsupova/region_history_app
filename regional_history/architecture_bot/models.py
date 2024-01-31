@@ -7,7 +7,7 @@ class Places(models.Model):
     address = models.CharField('Адрес места', max_length=250)
     coordinate_x = models.DecimalField('Координата места по оси X', max_digits=7, decimal_places=5)
     coordinate_y = models.DecimalField('Координата места по оси Y', max_digits=7, decimal_places=5)
-    photo = models.ImageField('Фото места', blank=True, upload_to='/media')
+    photo = models.ImageField('Фото места', blank=True, upload_to='media/')
 
     def __str__(self):
         return self.title
