@@ -9,6 +9,9 @@ class Places(models.Model):
     coordinate_y = models.DecimalField('Координата места по оси Y', max_digits=7, decimal_places=5)
     photo = models.ImageField('Фото места')
 
+    def __str__(self):
+        return self.title
+
     class Meta:
         verbose_name = 'Место'
         verbose_name_plural = 'Места'
@@ -16,7 +19,11 @@ class Places(models.Model):
 
 class Routes(models.Model):
     title = models.CharField('Название маршрута', max_length=250)
-    places = models.ManyToManyField('Места маршрута', Places, related_name='route_places')
+    places = models.ManyToManyField(Places, related_name='routes')
+    time = models.CharField('Время прогулки', max_length=250)
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         verbose_name = 'Маршрут'

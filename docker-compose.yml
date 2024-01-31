@@ -8,20 +8,17 @@ services:
       - ./regional_history:/regional_history
     environment:
       - DB_HOST=database
-      - DB_NAME=region_history
-      - DB_USER=dbuser
-      - DB_PASS=pass
-
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASS=${DB_PASS}
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
-
+      sh -c "python manage.py runserver 0.0.0.0:8001"
     depends_on:
       - database
 
   database:
     image: postgres:14.10-alpine
     environment:
-      - POSTGRES_DB=region_history
-      - POSTGRES_USER=dbuser
-      - POSTGRES_PASSWORD=pass
-
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASS}
