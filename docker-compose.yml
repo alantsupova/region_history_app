@@ -3,7 +3,7 @@ services:
     build:
       context: .
     ports:
-      - '8001:8000'
+      - '8000:8000'
     volumes:
       - ./regional_history:/regional_history
     environment:
@@ -23,9 +23,9 @@ services:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
 
-  nginx:
-    build: nginx/.
-    ports:
-      - ${NGINX_PORT}:80
-    depends_on:
-      - web-app
+#  nginx:
+#    build: nginx/.
+#    ports:
+#      - ${NGINX_PORT}:80
+#    depends_on:
+#      - web-app
