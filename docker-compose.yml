@@ -22,3 +22,13 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASS}
+
+  nginx:
+    build: nginx/.
+    ports:
+      - ${NGINX_PORT}:80
+    volumes:
+      - regional_history/static:/app/static
+      - regional_history/media:/app/media
+    depends_on:
+      - web
