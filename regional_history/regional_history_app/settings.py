@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-@^!n=g9rml(*dp$88_1nftvigp1#-3fevq&w0ik4^*ao7-l4w*
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'help.cbsvib.ru',
     'help.cbsvib.ru:8000'
 ]
 
