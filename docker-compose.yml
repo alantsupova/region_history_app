@@ -31,4 +31,4 @@ services:
       - regional_history/static:/app/static
       - regional_history/media:/app/media
     depends_on:
-      - web
+      - web-app
