@@ -4,4 +4,5 @@ psycopg2-binary
 Pillow
 geopy
 python_tsp
+uvicorn[standard]==0.24
 
