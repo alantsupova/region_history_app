@@ -27,7 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'help.cbsvib.ru',
-    'help.cbsvib.ru:8000'
+    'help.cbsvib.ru:8000',
+    '127.0.0.1'
 ]
 
 
