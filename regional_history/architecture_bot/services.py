@@ -12,8 +12,7 @@ def get_closest_places(coor_x: float, coor_y: float, places: list, amount: int) 
         closest_place = None
         closest_distance = float('inf')
         for place in places:
-            distance = get_distance(coor_x, coor_y, float(place['coordinate_y']),
-                                    float(place['coordinate_y']))
+            distance = get_distance(coor_x, coor_y, float(place['coordinate_x']), float(place['coordinate_y']))
             if distance < closest_distance and place not in closest_places:
                 closest_place = place
                 closest_distance = distance
