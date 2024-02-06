@@ -7,7 +7,7 @@ def get_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
 
 
 def get_closest_places(coor_x: float, coor_y: float, places: list, amount: int) -> list:
-    closest_places = []
+    closest_places = [{'coordinate_x': coor_x, 'coordinate_y': coor_y}]
     for i in range(amount):
         closest_place = None
         closest_distance = float('inf')
