@@ -15,8 +15,8 @@ class ClosestPlaces(APIView):
     """
     def get(self, request):
         places = Places.objects.values()
-        return Response(get_closest_places(request.query_params.get('coor_x'),
-                                         request.query_params.get('coor_y'),
+        return Response(get_closest_places(request.query_params.get('coordinate_x'),
+                                         request.query_params.get('coordinate_y'),
                                          list(places),
                                          int(request.query_params.get('amount'))))
 
@@ -27,8 +27,8 @@ class ClosestRoute(APIView):
     """
     def get(self, request):
         places = Places.objects.values()
-        return Response(get_simple_route(request.query_params.get('coor_x'),
-                                         request.query_params.get('coor_y'),
+        return Response(get_simple_route(request.query_params.get('coordinate_x'),
+                                         request.query_params.get('coordinate_y'),
                                          list(places),
                                          int(request.query_params.get('amount'))))
 
@@ -40,7 +40,7 @@ class CircleRoute(APIView):
     def get(self, request):
         places = Places.objects.values()
         return Response((get_circle_route(request.query_params.get('coordinate_x'),
-                                         request.query_params.get('coordinate_x'),
+                                         request.query_params.get('coordinate_y'),
                                          list(places),
                                          int(request.query_params.get('amount')))))
 
